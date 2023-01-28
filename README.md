@@ -1,16 +1,8 @@
 
-    <h1>
-       
-        <a href="">ki-fi music tool</a>
-    </h1>
-    <h4><b>a sleek homegrown music player that allows for plugins and skins :) </b></h4>
-
-    
-
 
 <div align="center">
     <a href="http://thismypc.com/">
-        <img src="screenshot.png" crossorigin>
+        <img src="(https://i.imgur.com/k2n587K.png)" crossorigin>
     </a>
 </div>
 
