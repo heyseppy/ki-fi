@@ -47,6 +47,7 @@
             this.btnImportTrack = new System.Windows.Forms.Button();
             this.btnNewTrack = new System.Windows.Forms.Button();
             this.listBox2 = new System.Windows.Forms.ListBox();
+            this.importTrackDialog = new System.Windows.Forms.OpenFileDialog();
             songArtistName = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.songPictureBox)).BeginInit();
@@ -290,6 +291,12 @@
             this.listBox2.Size = new System.Drawing.Size(200, 45);
             this.listBox2.TabIndex = 2;
             // 
+            // importTrackDialog
+            // 
+            this.importTrackDialog.DefaultExt = "mp3";
+            this.importTrackDialog.Multiselect = true;
+            this.importTrackDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.importTrackDialog_FileOk);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -347,5 +354,6 @@
         private Button btnImportTrack;
         private Button btnNewTrack;
         private ListBox listBox2;
+        private OpenFileDialog importTrackDialog;
     }
 }
