@@ -57,11 +57,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="songArtistName.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="label1.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="pictureBox1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="songPictureBox.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAsEAAAK9CAYAAADFUbHOAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wgAADsIBFShKgAAA/7JJREFUeF7s/XdX3Vi77Yueb7T3XusNFZxzxDY44gA2YBMMGAMGDNg4gnPOrrLL
+        vAAADrwBlbxySQAA/7JJREFUeF7s/XdX3Vi77Yueb7T3XusNFZxzxDY44gA2YBMMGAMGDNg4gnPOrrLL
         ldMb1z7nnvutTjv3/3H77xl6pCFNgcHlqlXrXaa13qSpNCXNOaWfOn084/8IH/4+/H34+/D34e/D34e/
         D38f/j78/Tf7+wDBH/4+/H34+/D34e/D34e/D38f/v7b/f0f27ZtCqbtm0NT07awc2dTaG7ZGXbvbn4H
         7ZK07p6olt07QkvLDm2vKexq3m7auQs1hR07t9v7pdretFX7sUX7szVs3Yq2SJulTYk2ShtqxPR0uU1h
@@ -12615,5 +12621,8 @@
   </data>
   <metadata name="pageSetupDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
+  </metadata>
+  <metadata name="backgroundWorker1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>169, 17</value>
   </metadata>
 </root>

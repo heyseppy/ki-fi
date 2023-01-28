@@ -28,134 +28,290 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.Label songArtistName;
+            System.Windows.Forms.Label label1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button5 = new System.Windows.Forms.Button();
+            this.songPictureBox = new System.Windows.Forms.PictureBox();
+            this.btnAddPlaylist = new System.Windows.Forms.Button();
             this.pageSetupDialog1 = new System.Windows.Forms.PageSetupDialog();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.btnLoveTrack = new System.Windows.Forms.Button();
+            this.btnPrevTrack = new System.Windows.Forms.Button();
+            this.btnPlayTrack = new System.Windows.Forms.Button();
+            this.btnNextTrack = new System.Windows.Forms.Button();
+            this.songNameLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.songListBox = new System.Windows.Forms.ListBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnImportTrack = new System.Windows.Forms.Button();
+            this.btnNewTrack = new System.Windows.Forms.Button();
+            this.listBox2 = new System.Windows.Forms.ListBox();
+            songArtistName = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.songPictureBox)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // songArtistName
             // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(1081, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(348, 305);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // button5
-            // 
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button5.Location = new System.Drawing.Point(1365, 386);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(64, 50);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "+";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(1081, 386);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(64, 50);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "❤";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button3.Location = new System.Drawing.Point(1155, 386);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(64, 50);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "<<";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button4.Location = new System.Drawing.Point(1225, 386);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(64, 50);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "play";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button6.Location = new System.Drawing.Point(1295, 386);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(64, 50);
-            this.button6.TabIndex = 10;
-            this.button6.Text = ">>";
-            this.button6.UseVisualStyleBackColor = true;
+            songArtistName.AutoSize = true;
+            songArtistName.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            songArtistName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            songArtistName.Location = new System.Drawing.Point(1081, 352);
+            songArtistName.Name = "songArtistName";
+            songArtistName.Size = new System.Drawing.Size(161, 20);
+            songArtistName.TabIndex = 12;
+            songArtistName.Text = "ripsquad [rs og tracks]";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(1081, 332);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(218, 20);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "rare rila instrumental i dance 2";
+            label1.AutoSize = true;
+            label1.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            label1.Location = new System.Drawing.Point(1221, 521);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(48, 15);
+            label1.TabIndex = 18;
+            label1.Text = "playlists:";
             // 
-            // label2
+            // songPictureBox
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.label2.Location = new System.Drawing.Point(1081, 352);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(154, 20);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "ripsquad (feat. cclusi)";
+            this.songPictureBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("songPictureBox.BackgroundImage")));
+            this.songPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.songPictureBox.Location = new System.Drawing.Point(1081, 12);
+            this.songPictureBox.Name = "songPictureBox";
+            this.songPictureBox.Size = new System.Drawing.Size(348, 305);
+            this.songPictureBox.TabIndex = 1;
+            this.songPictureBox.TabStop = false;
+            this.songPictureBox.Click += new System.EventHandler(this.songPictureBox_Click);
+            // 
+            // btnAddPlaylist
+            // 
+            this.btnAddPlaylist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddPlaylist.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnAddPlaylist.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnAddPlaylist.Location = new System.Drawing.Point(1365, 386);
+            this.btnAddPlaylist.Name = "btnAddPlaylist";
+            this.btnAddPlaylist.Size = new System.Drawing.Size(64, 50);
+            this.btnAddPlaylist.TabIndex = 5;
+            this.btnAddPlaylist.Text = "+";
+            this.btnAddPlaylist.UseVisualStyleBackColor = true;
+            // 
+            // btnLoveTrack
+            // 
+            this.btnLoveTrack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnLoveTrack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoveTrack.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnLoveTrack.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnLoveTrack.Location = new System.Drawing.Point(1081, 386);
+            this.btnLoveTrack.Name = "btnLoveTrack";
+            this.btnLoveTrack.Size = new System.Drawing.Size(64, 50);
+            this.btnLoveTrack.TabIndex = 7;
+            this.btnLoveTrack.Text = "❤";
+            this.btnLoveTrack.UseVisualStyleBackColor = true;
+            // 
+            // btnPrevTrack
+            // 
+            this.btnPrevTrack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPrevTrack.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnPrevTrack.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnPrevTrack.Location = new System.Drawing.Point(1155, 386);
+            this.btnPrevTrack.Name = "btnPrevTrack";
+            this.btnPrevTrack.Size = new System.Drawing.Size(64, 50);
+            this.btnPrevTrack.TabIndex = 8;
+            this.btnPrevTrack.Text = "<<";
+            this.btnPrevTrack.UseVisualStyleBackColor = true;
+            // 
+            // btnPlayTrack
+            // 
+            this.btnPlayTrack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPlayTrack.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnPlayTrack.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnPlayTrack.Location = new System.Drawing.Point(1225, 386);
+            this.btnPlayTrack.Name = "btnPlayTrack";
+            this.btnPlayTrack.Size = new System.Drawing.Size(64, 50);
+            this.btnPlayTrack.TabIndex = 9;
+            this.btnPlayTrack.Text = "▶";
+            this.btnPlayTrack.UseVisualStyleBackColor = true;
+            // 
+            // btnNextTrack
+            // 
+            this.btnNextTrack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNextTrack.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnNextTrack.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnNextTrack.Location = new System.Drawing.Point(1295, 386);
+            this.btnNextTrack.Name = "btnNextTrack";
+            this.btnNextTrack.Size = new System.Drawing.Size(64, 50);
+            this.btnNextTrack.TabIndex = 10;
+            this.btnNextTrack.Text = ">>";
+            this.btnNextTrack.UseVisualStyleBackColor = true;
+            // 
+            // songNameLabel
+            // 
+            this.songNameLabel.AutoSize = true;
+            this.songNameLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.songNameLabel.ForeColor = System.Drawing.Color.White;
+            this.songNameLabel.Location = new System.Drawing.Point(1081, 332);
+            this.songNameLabel.Name = "songNameLabel";
+            this.songNameLabel.Size = new System.Drawing.Size(218, 20);
+            this.songNameLabel.TabIndex = 11;
+            this.songNameLabel.Text = "rare rila instrumental i dance 2";
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.songListBox);
             this.panel1.ForeColor = System.Drawing.Color.Crimson;
             this.panel1.Location = new System.Drawing.Point(10, 7);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1041, 782);
+            this.panel1.Size = new System.Drawing.Size(1037, 699);
             this.panel1.TabIndex = 13;
+            // 
+            // songListBox
+            // 
+            this.songListBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.songListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.songListBox.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.songListBox.ForeColor = System.Drawing.Color.White;
+            this.songListBox.FormattingEnabled = true;
+            this.songListBox.ItemHeight = 20;
+            this.songListBox.Items.AddRange(new object[] {
+            "Have a Nice Life - Deathconsciousness",
+            "the newfound interest in connecticut - Tell Me About The Long Dark Path Home",
+            "Red House Painters - Down Colorful Hill",
+            "Townes Van Zandt - Our Mother the Mountain",
+            "Hanatarash - 3: William Bennett Has No Dick",
+            "Sweet Trip - You Will Never Know Why",
+            "Alcest - Kodama",
+            "SIERŚĆ - SIERŚĆ SIERŚĆ SIERŚĆ",
+            "Daniel Johnston - Songs Of Pain",
+            "acab rocky - Truce",
+            "Art of Fighting - Second Storey",
+            "goreshit - dancefloor degrader",
+            "Laurent Angrand & Patrick Robin - Mare La Lande",
+            "Mojave 3 - Excuses For Travellers",
+            "Kaoru Abe & Hiroshi Yamazaki - Jazz Bed",
+            "12Twelve - Speritismo",
+            "Ed Harrison - Neotokyo",
+            "Planning for Burial - Quietly",
+            "Shoji Aketagawa, Kan Mikami, Toshiaki Ishizuka - Daikanjyo",
+            "Las Cosas - Las Cosas",
+            "Aves - Aves Demo",
+            "Wayne Siegel - Autumn Resonance",
+            "ART-SCHOOL - シャーロット.e.p.",
+            "Вій - Йшов я небом",
+            "Rotten Blood - Failed Conversation",
+            "Aryan Art - Хармония - Вечност - Вселена",
+            "HaKU - na mele a ka haku",
+            "Spokane - The Proud Graduates",
+            "HaiKai No Ku - Ultra High Dimensionality",
+            "zowiso - At A Jogtrot To Death",
+            "Morgen - Morgen",
+            "Cremation Lily - Cremation Lily 2",
+            "Codeine - The White Birch",
+            "Mark & Bonnie Branciaroli - Wandering the Woods",
+            "Greg Stuart & Ryoko Akama - kotoba koukan",
+            "Tsuchitori Toshiyuki - SANUKAITO Stone Sounds of the Paleolithic Era in Japan",
+            "Peter Cusack - Sounds From Dangerous Places",
+            "Simo Lazarov - The City",
+            "Belong - Common Era",
+            "Steve Hackett - Voyage Of The Acolyte",
+            "The Gray Field Recordings - Hypnagogia",
+            "Empyrium - Where at Night the Wood Grouse Plays"});
+            this.songListBox.Location = new System.Drawing.Point(10, 10);
+            this.songListBox.Name = "songListBox";
+            this.songListBox.Size = new System.Drawing.Size(1018, 680);
+            this.songListBox.TabIndex = 0;
+            this.songListBox.SelectedIndexChanged += new System.EventHandler(this.songListBox_SelectedIndexChanged);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::ki_fi.Properties.Resources.bar_gif_1bf8155eb958d7505bed18887340801f;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(1081, 595);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(340, 103);
+            this.pictureBox2.TabIndex = 14;
+            this.pictureBox2.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.label3.Location = new System.Drawing.Point(1365, 678);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(50, 20);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "@ki-fi";
+            // 
+            // btnImportTrack
+            // 
+            this.btnImportTrack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnImportTrack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImportTrack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnImportTrack.Location = new System.Drawing.Point(1081, 539);
+            this.btnImportTrack.Name = "btnImportTrack";
+            this.btnImportTrack.Size = new System.Drawing.Size(64, 50);
+            this.btnImportTrack.TabIndex = 16;
+            this.btnImportTrack.Text = "import";
+            this.btnImportTrack.UseVisualStyleBackColor = true;
+            this.btnImportTrack.Click += new System.EventHandler(this.btnImportTrack_Click);
+            // 
+            // btnNewTrack
+            // 
+            this.btnNewTrack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnNewTrack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNewTrack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnNewTrack.Location = new System.Drawing.Point(1151, 539);
+            this.btnNewTrack.Name = "btnNewTrack";
+            this.btnNewTrack.Size = new System.Drawing.Size(64, 50);
+            this.btnNewTrack.TabIndex = 17;
+            this.btnNewTrack.Text = "new +";
+            this.btnNewTrack.UseVisualStyleBackColor = true;
+            // 
+            // listBox2
+            // 
+            this.listBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.listBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listBox2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.listBox2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.listBox2.ItemHeight = 15;
+            this.listBox2.Items.AddRange(new object[] {
+            "summer tracks",
+            "my favs",
+            "2022 replay"});
+            this.listBox2.Location = new System.Drawing.Point(1221, 539);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(200, 45);
+            this.listBox2.TabIndex = 2;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(1441, 820);
+            this.ClientSize = new System.Drawing.Size(1441, 718);
             this.ControlBox = false;
+            this.Controls.Add(label1);
+            this.Controls.Add(this.listBox2);
+            this.Controls.Add(this.btnNewTrack);
+            this.Controls.Add(this.btnImportTrack);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(songArtistName);
+            this.Controls.Add(this.songNameLabel);
+            this.Controls.Add(this.btnNextTrack);
+            this.Controls.Add(this.btnPlayTrack);
+            this.Controls.Add(this.btnPrevTrack);
+            this.Controls.Add(this.btnLoveTrack);
+            this.Controls.Add(this.songPictureBox);
+            this.Controls.Add(this.btnAddPlaylist);
+            this.Controls.Add(this.pictureBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MdiChildrenMinimizedAnchorBottom = false;
@@ -164,22 +320,32 @@
             this.ShowIcon = false;
             this.Text = "ki-fi - lusi + ripsquad (feat. skys)";
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.songPictureBox)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private PictureBox pictureBox1;
-        private Button button5;
+        private PictureBox songPictureBox;
+        private Button btnAddPlaylist;
         private PageSetupDialog pageSetupDialog1;
-        private Button button2;
-        private Button button3;
-        private Button button4;
-        private Button button6;
-        private Label label1;
-        private Label label2;
+        private Button btnLoveTrack;
+        private Button btnPrevTrack;
+        private Button btnPlayTrack;
+        private Button btnNextTrack;
+        private Label songNameLabel;
+        private Label songArtistName;
         private Panel panel1;
+        private ListBox songListBox;
+        private PictureBox pictureBox2;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private Label label3;
+        private Button btnImportTrack;
+        private Button btnNewTrack;
+        private ListBox listBox2;
     }
 }

@@ -59,5 +59,15 @@ namespace ki_fi.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bar_gif_1bf8155eb958d7505bed18887340801f {
+            get {
+                object obj = ResourceManager.GetObject("bar.gif.1bf8155eb958d7505bed18887340801f", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
