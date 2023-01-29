@@ -4,6 +4,7 @@ using System.IO;
 using System.Windows.Forms;
 using System.Media;
 using System.Security.Cryptography;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 
 namespace ki_fi
@@ -103,12 +104,7 @@ namespace ki_fi
         }
 
 
-
-        private void songListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            set_selected_song();
-        }
-
+ 
         private void songListBox_MouseHover(object sender, ListViewItemMouseHoverEventArgs e)
         {
             e.Item.BackColor = Color.Black;
@@ -118,7 +114,7 @@ namespace ki_fi
         {
             // play music when new song selected
             // get the selected songlist item's key
-            string song_title = songListBox.SelectedItems[0].ToString();
+            string song_title = songListBox.SelectedItems[0].Text;
             string song_path = tracks_list[song_title];
 
             selected_track[0] = song_title;
@@ -131,6 +127,10 @@ namespace ki_fi
             // start the windows media player
             wplayer.URL = selected_track[1];
             wplayer.controls.play();
+
+            // populate the media details
+            songNameLabel.Text = wplayer.currentMedia.getItemInfo("Title");
+            //songArtistName.Text = wplayer.currentMedia.getItemInfo("Artist");
 
             // set the controls to play
             btnPlayTrack.Text = " || ";
@@ -185,6 +185,22 @@ namespace ki_fi
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
             wplayer.settings.volume = trackBar1.Value;
+        }
+
+        private void songListBox_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (songListBox.SelectedItems.Count == 0)
+            {
+                return;
+
+            }
+            set_selected_song();
+
+        }
+
+        private void songProgress_Scroll(object sender, EventArgs e)
+        {
+
         }
     }
 }
