@@ -40,7 +40,7 @@
             this.btnNextTrack = new System.Windows.Forms.Button();
             this.songNameLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.songListBox = new System.Windows.Forms.ListBox();
+            this.songListBox = new System.Windows.Forms.ListView();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.label3 = new System.Windows.Forms.Label();
@@ -48,11 +48,14 @@
             this.btnNewTrack = new System.Windows.Forms.Button();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.importTrackDialog = new System.Windows.Forms.OpenFileDialog();
+            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
             songArtistName = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.songPictureBox)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // songArtistName
@@ -136,6 +139,7 @@
             this.btnPlayTrack.TabIndex = 9;
             this.btnPlayTrack.Text = "▶";
             this.btnPlayTrack.UseVisualStyleBackColor = true;
+            this.btnPlayTrack.Click += new System.EventHandler(this.btnPlayTrack_Click);
             // 
             // btnNextTrack
             // 
@@ -172,60 +176,18 @@
             // 
             // songListBox
             // 
+            this.songListBox.AllowColumnReorder = true;
+            this.songListBox.AutoArrange = false;
             this.songListBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.songListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.songListBox.CheckBoxes = true;
             this.songListBox.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.songListBox.ForeColor = System.Drawing.Color.White;
-            this.songListBox.FormattingEnabled = true;
-            this.songListBox.ItemHeight = 20;
-            this.songListBox.Items.AddRange(new object[] {
-            "Have a Nice Life - Deathconsciousness",
-            "the newfound interest in connecticut - Tell Me About The Long Dark Path Home",
-            "Red House Painters - Down Colorful Hill",
-            "Townes Van Zandt - Our Mother the Mountain",
-            "Hanatarash - 3: William Bennett Has No Dick",
-            "Sweet Trip - You Will Never Know Why",
-            "Alcest - Kodama",
-            "SIERŚĆ - SIERŚĆ SIERŚĆ SIERŚĆ",
-            "Daniel Johnston - Songs Of Pain",
-            "acab rocky - Truce",
-            "Art of Fighting - Second Storey",
-            "goreshit - dancefloor degrader",
-            "Laurent Angrand & Patrick Robin - Mare La Lande",
-            "Mojave 3 - Excuses For Travellers",
-            "Kaoru Abe & Hiroshi Yamazaki - Jazz Bed",
-            "12Twelve - Speritismo",
-            "Ed Harrison - Neotokyo",
-            "Planning for Burial - Quietly",
-            "Shoji Aketagawa, Kan Mikami, Toshiaki Ishizuka - Daikanjyo",
-            "Las Cosas - Las Cosas",
-            "Aves - Aves Demo",
-            "Wayne Siegel - Autumn Resonance",
-            "ART-SCHOOL - シャーロット.e.p.",
-            "Вій - Йшов я небом",
-            "Rotten Blood - Failed Conversation",
-            "Aryan Art - Хармония - Вечност - Вселена",
-            "HaKU - na mele a ka haku",
-            "Spokane - The Proud Graduates",
-            "HaiKai No Ku - Ultra High Dimensionality",
-            "zowiso - At A Jogtrot To Death",
-            "Morgen - Morgen",
-            "Cremation Lily - Cremation Lily 2",
-            "Codeine - The White Birch",
-            "Mark & Bonnie Branciaroli - Wandering the Woods",
-            "Greg Stuart & Ryoko Akama - kotoba koukan",
-            "Tsuchitori Toshiyuki - SANUKAITO Stone Sounds of the Paleolithic Era in Japan",
-            "Peter Cusack - Sounds From Dangerous Places",
-            "Simo Lazarov - The City",
-            "Belong - Common Era",
-            "Steve Hackett - Voyage Of The Acolyte",
-            "The Gray Field Recordings - Hypnagogia",
-            "Empyrium - Where at Night the Wood Grouse Plays"});
-            this.songListBox.Location = new System.Drawing.Point(10, 10);
+            this.songListBox.Location = new System.Drawing.Point(10, -1);
             this.songListBox.Name = "songListBox";
-            this.songListBox.Size = new System.Drawing.Size(1018, 680);
-            this.songListBox.TabIndex = 0;
-            this.songListBox.SelectedIndexChanged += new System.EventHandler(this.songListBox_SelectedIndexChanged);
+            this.songListBox.Size = new System.Drawing.Size(1008, 691);
+            this.songListBox.TabIndex = 1;
+            this.songListBox.UseCompatibleStateImageBehavior = false;
+            this.songListBox.View = System.Windows.Forms.View.List;
             // 
             // pictureBox2
             // 
@@ -297,6 +259,19 @@
             this.importTrackDialog.Multiselect = true;
             this.importTrackDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.importTrackDialog_FileOk);
             // 
+            // trackBar1
+            // 
+            this.trackBar1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.trackBar1.LargeChange = 1;
+            this.trackBar1.Location = new System.Drawing.Point(1081, 474);
+            this.trackBar1.Maximum = 100;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(348, 45);
+            this.trackBar1.TabIndex = 19;
+            this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.None;
+            this.trackBar1.Value = 50;
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -304,6 +279,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1441, 718);
             this.ControlBox = false;
+            this.Controls.Add(this.trackBar1);
             this.Controls.Add(label1);
             this.Controls.Add(this.listBox2);
             this.Controls.Add(this.btnNewTrack);
@@ -331,6 +307,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.songPictureBox)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -347,7 +324,6 @@
         private Label songNameLabel;
         private Label songArtistName;
         private Panel panel1;
-        private ListBox songListBox;
         private PictureBox pictureBox2;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Label label3;
@@ -355,5 +331,8 @@
         private Button btnNewTrack;
         private ListBox listBox2;
         private OpenFileDialog importTrackDialog;
+        private System.ComponentModel.BackgroundWorker backgroundWorker2;
+        private TrackBar trackBar1;
+        private ListView songListBox;
     }
 }
