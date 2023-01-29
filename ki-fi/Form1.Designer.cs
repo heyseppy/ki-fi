@@ -39,8 +39,6 @@
             this.btnPlayTrack = new System.Windows.Forms.Button();
             this.btnNextTrack = new System.Windows.Forms.Button();
             this.songNameLabel = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.songListBox = new System.Windows.Forms.ListView();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.label3 = new System.Windows.Forms.Label();
@@ -51,10 +49,10 @@
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.songProgress = new System.Windows.Forms.TrackBar();
+            this.songListBox = new System.Windows.Forms.ListView();
             songArtistName = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.songPictureBox)).BeginInit();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.songProgress)).BeginInit();
@@ -76,7 +74,7 @@
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            label1.Location = new System.Drawing.Point(1221, 521);
+            label1.Location = new System.Drawing.Point(1221, 503);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(48, 15);
             label1.TabIndex = 18;
@@ -166,39 +164,13 @@
             this.songNameLabel.TabIndex = 11;
             this.songNameLabel.Text = "rare rila instrumental i dance 2";
             // 
-            // panel1
-            // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.songListBox);
-            this.panel1.ForeColor = System.Drawing.Color.Crimson;
-            this.panel1.Location = new System.Drawing.Point(10, 7);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1037, 699);
-            this.panel1.TabIndex = 13;
-            // 
-            // songListBox
-            // 
-            this.songListBox.AllowColumnReorder = true;
-            this.songListBox.AutoArrange = false;
-            this.songListBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.songListBox.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.songListBox.ForeColor = System.Drawing.Color.White;
-            this.songListBox.Location = new System.Drawing.Point(10, -1);
-            this.songListBox.MultiSelect = false;
-            this.songListBox.Name = "songListBox";
-            this.songListBox.Size = new System.Drawing.Size(1008, 691);
-            this.songListBox.TabIndex = 1;
-            this.songListBox.UseCompatibleStateImageBehavior = false;
-            this.songListBox.View = System.Windows.Forms.View.List;
-            this.songListBox.SelectedIndexChanged += new System.EventHandler(this.songListBox_SelectedIndexChanged_1);
-            // 
             // pictureBox2
             // 
             this.pictureBox2.BackgroundImage = global::ki_fi.Properties.Resources.bar_gif_1bf8155eb958d7505bed18887340801f;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Location = new System.Drawing.Point(1081, 595);
+            this.pictureBox2.Location = new System.Drawing.Point(1081, 577);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(340, 103);
+            this.pictureBox2.Size = new System.Drawing.Size(340, 117);
             this.pictureBox2.TabIndex = 14;
             this.pictureBox2.TabStop = false;
             // 
@@ -218,7 +190,7 @@
             this.btnImportTrack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnImportTrack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImportTrack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnImportTrack.Location = new System.Drawing.Point(1081, 539);
+            this.btnImportTrack.Location = new System.Drawing.Point(1081, 521);
             this.btnImportTrack.Name = "btnImportTrack";
             this.btnImportTrack.Size = new System.Drawing.Size(64, 50);
             this.btnImportTrack.TabIndex = 16;
@@ -231,7 +203,7 @@
             this.btnNewTrack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnNewTrack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewTrack.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnNewTrack.Location = new System.Drawing.Point(1151, 539);
+            this.btnNewTrack.Location = new System.Drawing.Point(1151, 521);
             this.btnNewTrack.Name = "btnNewTrack";
             this.btnNewTrack.Size = new System.Drawing.Size(64, 50);
             this.btnNewTrack.TabIndex = 17;
@@ -251,7 +223,7 @@
             "summer tracks",
             "my favs",
             "2022 replay"});
-            this.listBox2.Location = new System.Drawing.Point(1221, 539);
+            this.listBox2.Location = new System.Drawing.Point(1221, 521);
             this.listBox2.Name = "listBox2";
             this.listBox2.Size = new System.Drawing.Size(200, 45);
             this.listBox2.TabIndex = 2;
@@ -266,7 +238,7 @@
             // 
             this.trackBar1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.trackBar1.LargeChange = 1;
-            this.trackBar1.Location = new System.Drawing.Point(1035, 7);
+            this.trackBar1.Location = new System.Drawing.Point(1016, 521);
             this.trackBar1.Maximum = 100;
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Orientation = System.Windows.Forms.Orientation.Vertical;
@@ -289,21 +261,39 @@
             this.songProgress.Value = 50;
             this.songProgress.Scroll += new System.EventHandler(this.songProgress_Scroll);
             // 
+            // songListBox
+            // 
+            this.songListBox.AllowColumnReorder = true;
+            this.songListBox.AutoArrange = false;
+            this.songListBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.songListBox.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("songListBox.BackgroundImage")));
+            this.songListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.songListBox.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.songListBox.ForeColor = System.Drawing.Color.White;
+            this.songListBox.Location = new System.Drawing.Point(12, 15);
+            this.songListBox.MultiSelect = false;
+            this.songListBox.Name = "songListBox";
+            this.songListBox.Size = new System.Drawing.Size(1031, 691);
+            this.songListBox.TabIndex = 1;
+            this.songListBox.UseCompatibleStateImageBehavior = false;
+            this.songListBox.View = System.Windows.Forms.View.List;
+            this.songListBox.SelectedIndexChanged += new System.EventHandler(this.songListBox_SelectedIndexChanged_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.ClientSize = new System.Drawing.Size(1441, 718);
+            this.ClientSize = new System.Drawing.Size(1441, 707);
             this.ControlBox = false;
-            this.Controls.Add(this.songProgress);
             this.Controls.Add(this.trackBar1);
+            this.Controls.Add(this.songListBox);
+            this.Controls.Add(this.songProgress);
             this.Controls.Add(label1);
             this.Controls.Add(this.listBox2);
             this.Controls.Add(this.btnNewTrack);
             this.Controls.Add(this.btnImportTrack);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(songArtistName);
             this.Controls.Add(this.songNameLabel);
             this.Controls.Add(this.btnNextTrack);
@@ -323,7 +313,6 @@
             this.TransparencyKey = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.songPictureBox)).EndInit();
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.songProgress)).EndInit();
@@ -342,7 +331,6 @@
         private Button btnNextTrack;
         private Label songNameLabel;
         private Label songArtistName;
-        private Panel panel1;
         private PictureBox pictureBox2;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Label label3;
@@ -352,7 +340,7 @@
         private OpenFileDialog importTrackDialog;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
         private TrackBar trackBar1;
-        private ListView songListBox;
         private TrackBar songProgress;
+        private ListView songListBox;
     }
 }

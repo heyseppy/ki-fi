@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "verKXZK3HUCeXvm+nTXVhx1F7mNbZ5YdkteGZwtcZKApqLYBq1e7yllRR2D7ydNNjzCEzsj2tfRyBcMZe6mRKg==",
+  "dgSpecHash": "YA+4Yo+lXl03KXYtIjaEn3y64kU85qoSBidILAXA7zAuEsESd/WUW4xNScvIhM0OyhyDexF0BB/fpZzgPpObrw==",
   "success": true,
   "projectFilePath": "C:\\Users\\sep\\source\\repos\\ki-fi\\ki-fi\\ki-fi.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\sep\\.nuget\\packages\\taglibsharp\\2.3.0\\taglibsharp.2.3.0.nupkg.sha512"
+  ],
   "logs": []
 }

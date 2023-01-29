@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using System.Media;
 using System.Security.Cryptography;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-
+using TagLib;
 
 namespace ki_fi
 {
@@ -29,7 +29,7 @@ namespace ki_fi
 
             string path = Path.GetDirectoryName(Application.ExecutablePath) + "\\song_track_list.txt";
 
-            if (File.Exists(path))
+            if (System.IO.File.Exists(path))
             {
                 return path;
             }
@@ -48,7 +48,7 @@ namespace ki_fi
         {
             //import tracks as filepath names into a text editor
 
-            importTrackDialog.Filter = "tracks|*.mp3";
+            importTrackDialog.Filter = "tracks|*.mp3; *.m4a";
             importTrackDialog.FilterIndex = 1;
             importTrackDialog.Multiselect = true;
 
@@ -62,12 +62,11 @@ namespace ki_fi
                 string path = retrieve_tracklist_file();
 
                 // write filepaths to text editor
-                using (StreamWriter sw = File.CreateText(path))
+                using (StreamWriter sw = System.IO.File.CreateText(path))
                 {
                     for (int i = 0; i < arrAllFiles.Length; i++)
                     {
                         sw.WriteLine(arrAllFiles[i]);
-                        
                     }
                 }
 
@@ -91,8 +90,19 @@ namespace ki_fi
             foreach (string song_path in System.IO.File.ReadLines(retrieve_tracklist_file()))
             {
                 string song_name = Path.GetFileNameWithoutExtension(song_path);
-                songListBox.Items.Add(song_name);
-                tracks_list.Add(song_name, song_path);
+
+                // check if it already exists
+
+                if (tracks_list.ContainsKey(song_name))
+                {
+                    MessageBox.Show(song_name + " already exists in the library, please name it something else");
+                }
+                else
+                {
+                    songListBox.Items.Add(song_name);
+                    tracks_list.Add(song_name, song_path);
+                }
+                
                 
             }
         }
@@ -131,6 +141,26 @@ namespace ki_fi
             // populate the media details
             songNameLabel.Text = wplayer.currentMedia.getItemInfo("Title");
             //songArtistName.Text = wplayer.currentMedia.getItemInfo("Artist");
+
+            // populate the cover photo
+            TagLib.File file = TagLib.File.Create(selected_track[1]);
+            var mStream = new MemoryStream();
+            var firstPicture = file.Tag.Pictures.FirstOrDefault();
+            if (firstPicture != null)
+            {
+                byte[] pData = firstPicture.Data.Data;
+                mStream.Write(pData, 0, Convert.ToInt32(pData.Length));
+                var bm = new Bitmap(mStream, false);
+                mStream.Dispose();
+                songPictureBox.Image = bm;
+                songPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
+            else
+            {
+                // set "no cover" image
+            }
+
+
 
             // set the controls to play
             btnPlayTrack.Text = " || ";

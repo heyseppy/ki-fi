@@ -19,3 +19,5 @@ C:\Users\sep\source\repos\ki-fi\ki-fi\obj\Debug\net6.0-windows\ref\ki-fi.dll
 C:\Users\sep\source\repos\ki-fi\ki-fi\obj\Debug\net6.0-windows\Interop.MediaPlayer.dll
 C:\Users\sep\source\repos\ki-fi\ki-fi\obj\Debug\net6.0-windows\Interop.WMPLib.dll
 C:\Users\sep\source\repos\ki-fi\ki-fi\obj\Debug\net6.0-windows\ki-fi.csproj.ResolveComReference.cache
+C:\Users\sep\source\repos\ki-fi\ki-fi\bin\Debug\net6.0-windows\TagLibSharp.dll
+C:\Users\sep\source\repos\ki-fi\ki-fi\obj\Debug\net6.0-windows\ki-fi.csproj.CopyComplete
