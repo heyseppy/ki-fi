@@ -1,6 +1,6 @@
 ### ki-fi
 
-a minimal & homegrown music player <3 
+a minimal & homegrown music player for windows <3 
 
 
 <div align="center">
