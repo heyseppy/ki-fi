@@ -19,10 +19,10 @@ namespace ki_fi
         }
 
         WMPLib.WindowsMediaPlayer wplayer = new WMPLib.WindowsMediaPlayer();
+
         IDictionary<string, string> tracks_list = new Dictionary<string, string>();
         string[] selected_track = new string[2];
-        string current_state = "paused";
-
+        string current_state = "none";
 
         private string retrieve_tracklist_file()
         {
@@ -99,7 +99,7 @@ namespace ki_fi
                 }
                 else
                 {
-                    songListBox.Items.Add(song_name);
+                    songListBox.Items.Add(" > " + song_name);
                     tracks_list.Add(song_name, song_path);
                 }
                 
@@ -125,12 +125,14 @@ namespace ki_fi
             // play music when new song selected
             // get the selected songlist item's key
             string song_title = songListBox.SelectedItems[0].Text;
-            string song_path = tracks_list[song_title];
+            // remove the first character (">")
+            string song_path = tracks_list[song_title.Replace(" > ", "")];
 
             selected_track[0] = song_title;
             selected_track[1] = song_path;
          
             play_selected_song();
+
         }
         public void play_selected_song()
         {
@@ -161,11 +163,16 @@ namespace ki_fi
             }
 
 
+            
 
             // set the controls to play
             btnPlayTrack.Text = " || ";
             btnPlayTrack.ForeColor = Color.Green;
             current_state = "playing";
+
+            song_track.Start();
+
+
         }
 
         public void pause_selected_song()
@@ -179,10 +186,23 @@ namespace ki_fi
             current_state = "paused";
         }
 
+        public void resume_playing_song()
+        {
+            // start the windows media player
+            wplayer.controls.play();
+
+            // set the controls to play
+            btnPlayTrack.Text = " || ";
+            btnPlayTrack.ForeColor = Color.Red;
+            current_state = "playing";
+        }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
             load_all_tracks();
+            wplayer.settings.volume = trackBar1.Value;
+
         }
 
         private void importTrackDialog_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
@@ -195,6 +215,15 @@ namespace ki_fi
             // check if paused
             if (current_state == "paused")
             {
+                resume_playing_song();
+            }
+            else if (current_state == "playing")
+            {
+                pause_selected_song();
+               
+            }
+            else
+            {
                 // check if any songs in tracklist
                 if (selected_track[0] == "")
                 {
@@ -206,17 +235,7 @@ namespace ki_fi
                     play_selected_song();
                 }
             }
-            else
-            {
-                pause_selected_song();
-            }
         }
-
-        private void trackBar1_Scroll(object sender, EventArgs e)
-        {
-            wplayer.settings.volume = trackBar1.Value;
-        }
-
         private void songListBox_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (songListBox.SelectedItems.Count == 0)
@@ -224,13 +243,43 @@ namespace ki_fi
                 return;
 
             }
+
             set_selected_song();
+
+            
 
         }
 
         private void songProgress_Scroll(object sender, EventArgs e)
         {
+            wplayer.controls.currentPosition = songProgress.Value / 1000;
+        }
 
+        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void trackBar1_Scroll_1(object sender, EventArgs e)
+        {
+            wplayer.settings.volume = trackBar1.Value;
+        }
+
+        private void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+            double duration = wplayer.currentMedia.duration;
+        }
+
+        private void song_track_Tick(object sender, EventArgs e)
+        {
+            double duration = wplayer.currentMedia.duration;
+            songProgress.Maximum = (int)(duration*1000);
+            songProgress.Value = (int)(wplayer.controls.currentPosition * 1000);
         }
     }
 }

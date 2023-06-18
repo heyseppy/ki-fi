@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label songArtistName;
             System.Windows.Forms.Label label1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
@@ -47,15 +48,16 @@
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.importTrackDialog = new System.Windows.Forms.OpenFileDialog();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.songProgress = new System.Windows.Forms.TrackBar();
             this.songListBox = new System.Windows.Forms.ListView();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.song_track = new System.Windows.Forms.Timer(this.components);
             songArtistName = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.songPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.songProgress)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // songArtistName
@@ -174,6 +176,10 @@
             this.pictureBox2.TabIndex = 14;
             this.pictureBox2.TabStop = false;
             // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -234,25 +240,11 @@
             this.importTrackDialog.Multiselect = true;
             this.importTrackDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.importTrackDialog_FileOk);
             // 
-            // trackBar1
-            // 
-            this.trackBar1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.trackBar1.LargeChange = 1;
-            this.trackBar1.Location = new System.Drawing.Point(1016, 521);
-            this.trackBar1.Maximum = 100;
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trackBar1.Size = new System.Drawing.Size(45, 173);
-            this.trackBar1.TabIndex = 19;
-            this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.None;
-            this.trackBar1.Value = 50;
-            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
-            // 
             // songProgress
             // 
-            this.songProgress.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.songProgress.Cursor = System.Windows.Forms.Cursors.Hand;
             this.songProgress.LargeChange = 1;
-            this.songProgress.Location = new System.Drawing.Point(1081, 442);
+            this.songProgress.Location = new System.Drawing.Point(1081, 284);
             this.songProgress.Maximum = 100;
             this.songProgress.Name = "songProgress";
             this.songProgress.Size = new System.Drawing.Size(348, 45);
@@ -270,14 +262,28 @@
             this.songListBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.songListBox.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.songListBox.ForeColor = System.Drawing.Color.White;
-            this.songListBox.Location = new System.Drawing.Point(12, 15);
+            this.songListBox.Location = new System.Drawing.Point(12, 11);
             this.songListBox.MultiSelect = false;
             this.songListBox.Name = "songListBox";
-            this.songListBox.Size = new System.Drawing.Size(1031, 691);
+            this.songListBox.Size = new System.Drawing.Size(1003, 683);
             this.songListBox.TabIndex = 1;
             this.songListBox.UseCompatibleStateImageBehavior = false;
             this.songListBox.View = System.Windows.Forms.View.List;
             this.songListBox.SelectedIndexChanged += new System.EventHandler(this.songListBox_SelectedIndexChanged_1);
+            // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(1081, 470);
+            this.trackBar1.Maximum = 100;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(348, 45);
+            this.trackBar1.TabIndex = 21;
+            this.trackBar1.Value = 10;
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll_1);
+            // 
+            // song_track
+            // 
+            this.song_track.Tick += new System.EventHandler(this.song_track_Tick);
             // 
             // Form1
             // 
@@ -314,8 +320,8 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.songPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.songProgress)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -339,8 +345,9 @@
         private ListBox listBox2;
         private OpenFileDialog importTrackDialog;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
-        private TrackBar trackBar1;
         private TrackBar songProgress;
         private ListView songListBox;
+        private TrackBar trackBar1;
+        private System.Windows.Forms.Timer song_track;
     }
 }

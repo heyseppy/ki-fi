@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sep\\source\\repos\\ki-fi\\ki-fi\\ki-fi.csproj": {}
+    "C:\\Users\\sep\\Source\\Repos\\heyseppy\\ki-fi\\ki-fi\\ki-fi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sep\\source\\repos\\ki-fi\\ki-fi\\ki-fi.csproj": {
+    "C:\\Users\\sep\\Source\\Repos\\heyseppy\\ki-fi\\ki-fi\\ki-fi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sep\\source\\repos\\ki-fi\\ki-fi\\ki-fi.csproj",
+        "projectUniqueName": "C:\\Users\\sep\\Source\\Repos\\heyseppy\\ki-fi\\ki-fi\\ki-fi.csproj",
         "projectName": "ki-fi",
-        "projectPath": "C:\\Users\\sep\\source\\repos\\ki-fi\\ki-fi\\ki-fi.csproj",
+        "projectPath": "C:\\Users\\sep\\Source\\Repos\\heyseppy\\ki-fi\\ki-fi\\ki-fi.csproj",
         "packagesPath": "C:\\Users\\sep\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sep\\source\\repos\\ki-fi\\ki-fi\\obj\\",
+        "outputPath": "C:\\Users\\sep\\Source\\Repos\\heyseppy\\ki-fi\\ki-fi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\sep\\AppData\\Roaming\\NuGet\\NuGet.Config",
