@@ -6,7 +6,7 @@ great for a secondary display, even better with a coffee
 
 <div align="center">
     <a href="http://heysep.com/">
-        <img src="https://i.imgur.com/pyvysOB.jpg" crossorigin>
+        <img src="https://i.imgur.com/nbfY4gO.jpeg" crossorigin>
     </a>
 </div>
 
